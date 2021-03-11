@@ -1,2 +1,8 @@
+ifeq ($(shell uname -m),e2k)
+    OPT_LVL=
+else
+    OPT_LVL=-O
+endif
+
 lsiutil: lsiutil.c
-	gcc -Wall -O lsiutil.c -o lsiutil
+	gcc -Wall $(OPT_LVL) lsiutil.c -o lsiutil
